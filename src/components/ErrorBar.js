@@ -9,4 +9,8 @@ const ErrorBar = ({ msg }) => {
 	);
 };
 
+ErrorBar.defaultProps = {
+	msg: "Sorry. We could not process that",
+};
+
 export default ErrorBar;

@@ -8,11 +8,8 @@ class CardPost extends React.Component {
 	render() {
 		return (
 			<div className="column" data-aos="fade-right">
-				<div className="ui card large">
-					<div
-						className="content"
-						style={{ BackgroundColor: "#E0E1E2" }}
-					>
+				<div className="ui card">
+					<div className="content">
 						<div className="ui header center aligned">
 							{this.props.card.name}
 						</div>
