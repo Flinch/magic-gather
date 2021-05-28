@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SetBar from "./components/SetBar";
+import CardListings from "./cards/CardListings";
+import witch from "./img/magic.svg";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	state = { cards: [], hide: 0 };
+	onGather = (cards) => {
+		this.setState({ cards: cards, hide: 1 });
+	};
+	render() {
+		return (
+			<div>
+				{" "}
+				<div className="container">
+					<img
+						src={witch}
+						className={this.state.hide ? "hide" : "witch-img"}
+					/>
+				</div>
+				<SetBar onGather={this.onGather} />{" "}
+				<CardListings cards={this.state.cards} />
+			</div>
+		);
+	}
 }
 
 export default App;
